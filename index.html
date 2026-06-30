@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TV Art — Your photos as art on your LG TV</title>
+  <meta name="description" content="TV Art turns your personal photo library into an ambient art gallery on your LG smart TV. Supports OneDrive and Mylio Photos+.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #000;
+      --text: #fff;
+      --text-secondary: #888;
+      --border: #222;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--text); text-decoration: none; border-bottom: 1px solid #444; }
+    a:hover { border-color: var(--text); }
+
+    /* ── Hero ── */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 80px 24px;
+      text-align: center;
+    }
+
+    .hero-icon {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 48px;
+    }
+
+    .hero-title {
+      font-weight: 900;
+      font-size: clamp(56px, 10vw, 96px);
+      letter-spacing: 0.05em;
+      line-height: 1;
+      margin-bottom: 24px;
+    }
+
+    .hero-subtitle {
+      font-weight: 300;
+      font-size: clamp(18px, 2.5vw, 24px);
+      color: var(--text-secondary);
+      max-width: 560px;
+      margin-bottom: 56px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 36px;
+      font-family: 'Jost', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      border: 1px solid var(--text);
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--text);
+      transition: background 0.15s, color 0.15s;
+    }
+    .btn:hover { background: var(--text); color: var(--bg); }
+    .btn-secondary { border-color: #444; color: var(--text-secondary); }
+    .btn-secondary:hover { background: #444; color: var(--text); border-color: #444; }
+
+    /* ── Divider ── */
+    .rule {
+      width: 60px;
+      height: 1px;
+      background: #222;
+      margin: 80px auto;
+    }
+
+    /* ── Features ── */
+    .section {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px 100px;
+    }
+
+    .section-title {
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+    }
+
+    .feature-label {
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    .feature-desc {
+      font-weight: 300;
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ── Providers ── */
+    .providers {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .provider-tag {
+      padding: 8px 20px;
+      border: 1px solid #333;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    footer a { color: var(--text-secondary); border-bottom-color: #333; }
+    footer a:hover { color: var(--text); border-bottom-color: var(--text); }
+
+    .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <img class="hero-icon" src="icon.png" alt="TV Art icon">
+    <h1 class="hero-title">TV Art</h1>
+    <p class="hero-subtitle">Your personal photo library as a fullscreen ambient art gallery on your LG smart TV.</p>
+    <div class="hero-actions">
+      <a class="btn" href="https://github.com/cojofra/lg-tv-art">View on GitHub</a>
+      <a class="btn btn-secondary" href="privacy.html">Privacy Policy</a>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <section class="section">
+    <p class="section-title">Features</p>
+    <div class="features">
+      <div>
+        <p class="feature-label">Zero subscriptions</p>
+        <p class="feature-desc">Uses your existing OneDrive or Mylio Photos+ library. No new accounts, no monthly fees.</p>
+      </div>
+      <div>
+        <p class="feature-label">Ambient display</p>
+        <p class="feature-desc">Fullscreen crossfade slideshow with optional Ken Burns effect. Stays on during your set hours.</p>
+      </div>
+      <div>
+        <p class="feature-label">Remote friendly</p>
+        <p class="feature-desc">Designed for the LG Magic Remote. Skip, pause, hide an image, or open settings without a keyboard.</p>
+      </div>
+      <div>
+        <p class="feature-label">Private by default</p>
+        <p class="feature-desc">No backend server. Images are fetched directly from your storage provider to your TV.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <p class="section-title">Works with</p>
+    <div class="providers">
+      <span class="provider-tag">Microsoft OneDrive</span>
+      <span class="provider-tag">Mylio Photos+</span>
+      <span class="provider-tag">Google Drive</span>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://github.com/cojofra/lg-tv-art">GitHub</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <p style="margin-top: 16px;">Made by <a href="https://github.com/cojofra">Roundabout Corner</a></p>
+  </footer>
+
+</body>
+</html>

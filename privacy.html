@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — TV Art</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 17px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: #888; text-decoration: none; border-bottom: 1px solid #333; }
+    a:hover { color: #fff; border-bottom-color: #fff; }
+
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 80px 24px 100px;
+    }
+
+    .back {
+      display: inline-block;
+      font-size: 14px;
+      color: #555;
+      border-bottom: 1px solid #222;
+      margin-bottom: 64px;
+    }
+    .back:hover { color: #fff; border-bottom-color: #fff; }
+
+    h1 {
+      font-weight: 900;
+      font-size: clamp(36px, 6vw, 56px);
+      letter-spacing: 0.03em;
+      margin-bottom: 12px;
+    }
+
+    .updated {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 56px;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #888;
+      margin-top: 48px;
+      margin-bottom: 16px;
+    }
+
+    p { margin-bottom: 16px; color: #ccc; }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      margin: 0 0 16px 0;
+      padding-left: 20px;
+      color: #ccc;
+    }
+    li { margin-bottom: 8px; }
+
+    .rule {
+      width: 40px;
+      height: 1px;
+      background: #222;
+      margin: 48px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <a class="back" href="index.html">← TV Art</a>
+
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: June 2026</p>
+
+    <p>TV Art is an LG webOS app that displays your personal photos as a fullscreen ambient slideshow on your TV. This policy explains what data the app accesses, stores, and transmits.</p>
+
+    <h2>What we collect</h2>
+    <p>TV Art does not collect, transmit, or store any personal data on any server. There is no backend. All data stays on your TV.</p>
+
+    <h2>What is stored on your TV</h2>
+    <p>The app stores the following in your TV's <code>localStorage</code> (local storage on the device, cleared when the app is uninstalled):</p>
+    <ul>
+      <li><strong>Authentication tokens</strong> — access token and refresh token from your storage provider (OneDrive). These are used to fetch your images and are never transmitted to any server other than the provider's own API.</li>
+      <li><strong>Session data</strong> — which provider and folder or album you selected, so the slideshow resumes on next launch.</li>
+      <li><strong>Settings</strong> — display preferences such as slideshow duration, image order, and active hours.</li>
+      <li><strong>Hidden image list</strong> — IDs of images you've hidden from the slideshow.</li>
+    </ul>
+
+    <h2>Third-party services</h2>
+    <p>Depending on the provider you connect, the app communicates with:</p>
+
+    <p><strong>Microsoft OneDrive (Microsoft Graph API)</strong><br>
+    Used to authenticate your Microsoft account and list images from your OneDrive. Authentication uses the OAuth 2.0 Device Authorization Grant (RFC 8628) — you approve access on your phone or computer, not on the TV. Microsoft's privacy policy applies: <a href="https://privacy.microsoft.com">privacy.microsoft.com</a>.</p>
+
+    <p><strong>Mylio Photos+</strong><br>
+    Used to fetch images from a shared Mylio album. No authentication is required — the app fetches a public manifest and images directly from Mylio's CDN using a share link you provide. Mylio's privacy policy applies: <a href="https://mylio.com/privacy-policy">mylio.com/privacy-policy</a>.</p>
+
+    <p><strong>Google Drive</strong><br>
+    Used to fetch images from a publicly shared Google Drive folder. The app uses a Google API key to list files; no Google account login is required. Google's privacy policy applies: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>.</p>
+
+    <h2>No analytics or tracking</h2>
+    <p>TV Art contains no analytics, crash reporting, advertising SDKs, or third-party tracking of any kind.</p>
+
+    <h2>Children's privacy</h2>
+    <p>TV Art does not knowingly collect any information from children under 13.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>If the policy changes materially, the updated date above will reflect the change. The current version is always at this URL.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy: <a href="https://github.com/YourLGTVArtGallery">github.com/YourLGTVArtGallery</a></p>
+
+    <div class="rule"></div>
+    <p><a href="index.html">← Back to TV Art</a></p>
+
+  </div>
+</body>
+</html>
