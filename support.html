@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support — TV Art</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 17px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: #888; text-decoration: none; border-bottom: 1px solid #333; }
+    a:hover { color: #fff; border-bottom-color: #fff; }
+
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 80px 24px 100px;
+    }
+
+    .back {
+      display: inline-block;
+      font-size: 14px;
+      color: #555;
+      border-bottom: 1px solid #222;
+      margin-bottom: 64px;
+    }
+    .back:hover { color: #fff; border-bottom-color: #fff; }
+
+    h1 {
+      font-weight: 900;
+      font-size: clamp(36px, 6vw, 56px);
+      letter-spacing: 0.03em;
+      margin-bottom: 12px;
+    }
+
+    .tagline {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 56px;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #888;
+      margin-top: 48px;
+      margin-bottom: 16px;
+    }
+
+    p { margin-bottom: 16px; color: #ccc; }
+
+    .faq-item { margin-bottom: 40px; }
+
+    .faq-q {
+      font-weight: 700;
+      font-size: 16px;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .faq-a { color: #999; font-size: 16px; }
+
+    .contact-box {
+      margin-top: 56px;
+      padding: 32px;
+      border: 1px solid #222;
+    }
+
+    .contact-box h2 { margin-top: 0; }
+
+    .contact-link {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 12px 28px;
+      border: 1px solid #fff;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid #fff;
+      transition: background 0.15s, color 0.15s;
+    }
+    .contact-link:hover { background: #fff; color: #000; }
+
+    .rule {
+      width: 40px;
+      height: 1px;
+      background: #222;
+      margin: 48px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <a class="back" href="index.html">← TV Art</a>
+
+    <h1>Support</h1>
+    <p class="tagline">Get help setting up or using TV Art on your LG TV.</p>
+
+    <h2>Common questions</h2>
+
+    <div class="faq-item">
+      <p class="faq-q">How do I install TV Art?</p>
+      <p class="faq-a">TV Art is available on the LG Content Store. Search for "TV Art" on your LG TV. You can also sideload it — see the <a href="https://github.com/cojofra/lg-tv-art">GitHub repo</a> for instructions.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Which storage providers are supported?</p>
+      <p class="faq-a">TV Art currently supports Microsoft OneDrive and Mylio Photos+. Google Drive support is in progress.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">How do I connect OneDrive?</p>
+      <p class="faq-a">Select OneDrive on the provider screen. The app will show a code — visit the URL on your phone or computer, sign in with your Microsoft account, and enter the code. The TV connects automatically once approved.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">How do I connect Mylio Photos+?</p>
+      <p class="faq-a">In the Mylio app, open an album, tap Share, and copy the link. On your TV, select Mylio Photos+ and paste the album code (the part after share.mylio.com/).</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">The slideshow stopped — what happened?</p>
+      <p class="faq-a">If active hours are set in Settings, the slideshow pauses outside those hours. You can also check that your TV is connected to the internet and your storage provider account is still connected.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">How do I disconnect my account?</p>
+      <p class="faq-a">During the slideshow, press OK to open Settings. Scroll to the Library section and tap Disconnect. This removes all stored tokens from the TV.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Does TV Art store my photos anywhere?</p>
+      <p class="faq-a">No. Images are fetched directly from your storage provider to your TV. Nothing is stored on any server. See the <a href="privacy.html">Privacy Policy</a> for full details.</p>
+    </div>
+
+    <div class="contact-box">
+      <h2>Still need help?</h2>
+      <p>Open an issue on GitHub — include your LG TV model, webOS version, and a description of the problem.</p>
+      <a class="contact-link" href="https://github.com/cojofra/lg-tv-art/issues/new">Open an issue on GitHub</a>
+    </div>
+
+    <div class="rule"></div>
+    <p><a href="index.html">← Back to TV Art</a></p>
+
+  </div>
+</body>
+</html>
