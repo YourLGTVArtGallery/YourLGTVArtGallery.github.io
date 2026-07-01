@@ -163,6 +163,60 @@
     footer a:hover { color: var(--text); border-bottom-color: var(--text); }
 
     .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
+
+    /* ── Story / Support ── */
+    .prose {
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .prose p {
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+
+    .prose p:last-child { margin-bottom: 0; }
+
+    .prose a { color: #fff; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      max-width: 620px;
+      margin: 48px auto 0;
+    }
+
+    .card {
+      padding: 28px;
+      border: 1px solid #222;
+      text-align: left;
+    }
+
+    .card-label {
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    .card-desc {
+      font-size: 15px;
+      color: #999;
+      margin-bottom: 20px;
+    }
+
+    .card-link {
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .box-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   </style>
 </head>
 <body>
@@ -172,7 +226,7 @@
     <h1 class="hero-title">TV Art</h1>
     <p class="hero-subtitle">Your personal photo library as a fullscreen ambient art gallery on your LG smart TV.</p>
     <div class="hero-actions">
-      <a class="btn" href="https://github.com/YourLGTVArtGallery/lg-tv-art">View on GitHub</a>
+      <a class="btn" href="https://github.com/YourLGTVArtGallery/lg-tv-art/issues/new/choose">Report a bug or request a feature</a>
       <a class="btn btn-secondary" href="privacy.html">Privacy Policy</a>
     </div>
   </section>
@@ -210,13 +264,46 @@
     </div>
   </section>
 
+  <div class="rule"></div>
+
+  <section class="section">
+    <p class="section-title">Why we built this</p>
+    <div class="prose">
+      <p>We wanted our TV to double as an art frame, cycling through our own photos instead of a generic screensaver. We looked for an app that did that. We couldn't find one, so we built it.</p>
+      <p>TV Art started as a project for our own living room. We're now sharing it with anyone who wants the same thing: free, no accounts, no subscriptions, no catch.</p>
+      <p>It's a passion project, built and maintained in our spare time. Run into a bug, or have an idea for a feature? Tell us and we'll do our best to get to it. Want to help build it? We'd love that too.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <p class="card-label">Bugs &amp; feature requests</p>
+        <p class="card-desc">Spot something broken, or have an idea? Open a GitHub issue.</p>
+        <a class="card-link" href="https://github.com/YourLGTVArtGallery/lg-tv-art/issues/new/choose">Open an issue →</a>
+      </div>
+      <div class="card">
+        <p class="card-label">Want to contribute?</p>
+        <p class="card-desc">We'd love the help. Send us a note and let's talk.</p>
+        <a class="card-link" href="mailto:support@xor0game.com">Email us →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <p class="section-title">Support us</p>
+    <div class="prose" style="text-align: center;">
+      <p>TV Art will always be free. We're not asking for donations.<br>If you'd like to support the work, tell a friend about TV Art, or buy a deck at <a href="https://www.xor0game.com/">xor0game</a>,<br>another passion project of ours.</p>
+    </div>
+    <div class="box-actions" style="margin-top: 32px;">
+      <a class="btn" href="https://www.xor0game.com/">Buy a xor0game deck</a>
+    </div>
+  </section>
+
   <footer>
     <div class="footer-links">
       <a href="https://github.com/YourLGTVArtGallery/lg-tv-art">GitHub</a>
       <a href="support.html">Support</a>
       <a href="privacy.html">Privacy Policy</a>
     </div>
-    <p style="margin-top: 16px;">Made by <a href="https://github.com/YourLGTVArtGallery">Roundabout Corner</a></p>
+    <p style="margin-top: 16px;">Made by <a href="https://github.com/YourLGTVArtGallery">Roundabout Corner LLC</a></p>
   </footer>
 
 </body>
