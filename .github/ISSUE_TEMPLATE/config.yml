@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security vulnerability
+    url: https://github.com/YourLGTVArtGallery/YourLGTVArtGallery.github.io/security/advisories/new
+    about: Please do not file security issues publicly. Use private reporting instead — see SECURITY.md.
+  - name: Want to contribute?
+    url: mailto:support@xor0game.com
+    about: Interested in helping build TV Art? Send us a note.

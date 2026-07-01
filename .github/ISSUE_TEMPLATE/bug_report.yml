@@ -1,0 +1,74 @@
+name: Bug report
+description: Something isn't working the way it should
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug. The more detail you give, the faster we can track it down.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the bug.
+      placeholder: The slideshow freezes after about 10 minutes...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+    validations:
+      required: false
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: What did you do right before this happened?
+      placeholder: |
+        1. Connect OneDrive
+        2. Set active hours to 8am-10pm
+        3. Wait for slideshow to start
+        4. ...
+    validations:
+      required: false
+
+  - type: input
+    id: tv-model
+    attributes:
+      label: LG TV model
+      placeholder: e.g. OLED55C3
+    validations:
+      required: true
+
+  - type: input
+    id: webos-version
+    attributes:
+      label: webOS version
+      description: Settings → General → About This TV
+      placeholder: e.g. webOS 23
+    validations:
+      required: true
+
+  - type: dropdown
+    id: provider
+    attributes:
+      label: Storage provider
+      options:
+        - Microsoft OneDrive
+        - Mylio Photos+
+        - Google Drive
+        - Not applicable
+    validations:
+      required: false
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Screenshots, photos of the TV screen, or anything else that might help.
+    validations:
+      required: false

@@ -1,0 +1,31 @@
+name: Feature request
+description: Suggest an idea or improvement for TV Art
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Got an idea? We'd love to hear it. This is a passion project maintained in spare time, so we can't promise a timeline — but every request helps us prioritize.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: What are you trying to do that TV Art doesn't support today?
+      placeholder: I'd like my photos to shuffle randomly instead of in order...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: What would you like to happen?
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Anything you've tried as a workaround?
+    validations:
+      required: false
