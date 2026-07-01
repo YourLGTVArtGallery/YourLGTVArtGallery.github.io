@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;700;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    [hidden] { display: none !important; }
 
     :root {
       --bg: #000;
@@ -92,6 +93,25 @@
       margin-bottom: 10px;
     }
 
+    .code-input {
+      display: block;
+      width: 100%;
+      padding: 0;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #333;
+      color: var(--text);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 36px;
+      letter-spacing: 0.2em;
+      margin-bottom: 32px;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    .code-input::placeholder { color: #333; }
+    .code-input:focus { border-bottom-color: #888; }
+
     textarea {
       display: block;
       width: 100%;
@@ -155,13 +175,12 @@
   <p class="logo">TV Art</p>
   <p class="subtitle">Connect your photo library to the TV.</p>
 
-  <div id="no-code" hidden>
-    <p style="color:#888; font-size:15px;">No pairing code found.<br>Please scan the QR code shown on your TV.</p>
-  </div>
-
   <div id="main-form">
-    <p class="code-display">TV code</p>
-    <p class="code-value" id="code-display">— — — — — —</p>
+    <p class="code-display" id="code-label">TV code</p>
+    <p class="code-value" id="code-display" hidden></p>
+    <input id="code-input" class="code-input" type="text" placeholder="482 930"
+           maxlength="7" autocomplete="off" autocorrect="off" autocapitalize="off"
+           spellcheck="false" hidden>
 
     <label for="url-input">Paste your share link</label>
     <textarea id="url-input" placeholder="https://share.mylio.com/…" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
@@ -180,27 +199,39 @@
   var WORKER_BASE = 'https://tvart-pair.yourlgtvartgallery.workers.dev';
 
   var params = new URLSearchParams(window.location.search);
-  var code = params.get('code');
+  var codeFromUrl = params.get('code');
+  var hasCode = codeFromUrl && /^\d{6}$/.test(codeFromUrl);
 
-  var mainForm = document.getElementById('main-form');
-  var noCode = document.getElementById('no-code');
   var codeDisplay = document.getElementById('code-display');
+  var codeInput = document.getElementById('code-input');
   var urlInput = document.getElementById('url-input');
   var sendBtn = document.getElementById('btn-send');
   var statusEl = document.getElementById('status');
 
-  if (!code || !/^\d{6}$/.test(code)) {
-    if (mainForm) mainForm.hidden = true;
-    if (noCode) noCode.hidden = false;
-    return;
+  if (hasCode) {
+    // Pre-filled from QR scan or URL — show as read-only display
+    if (codeDisplay) { codeDisplay.textContent = codeFromUrl.slice(0, 3) + ' ' + codeFromUrl.slice(3); codeDisplay.hidden = false; }
+    if (codeInput) codeInput.hidden = true;
+  } else {
+    // No code in URL — show editable input (laptop direct navigation)
+    if (codeDisplay) codeDisplay.hidden = true;
+    if (codeInput) codeInput.hidden = false;
   }
 
-  if (codeDisplay) {
-    codeDisplay.textContent = code.slice(0, 3) + ' ' + code.slice(3);
+  function getCode() {
+    if (hasCode) return codeFromUrl;
+    var raw = codeInput ? codeInput.value.replace(/\s/g, '') : '';
+    return /^\d{6}$/.test(raw) ? raw : null;
   }
 
   if (sendBtn) {
     sendBtn.addEventListener('click', function() {
+      var code = getCode();
+      if (!code) {
+        statusEl.className = 'status error';
+        statusEl.textContent = 'Enter the 6-digit code shown on your TV.';
+        return;
+      }
       var url = urlInput ? urlInput.value.trim() : '';
       if (!url) {
         statusEl.className = 'status error';
@@ -226,7 +257,7 @@
           statusEl.textContent = 'Sent! Your TV will connect in a moment.';
           sendBtn.disabled = false;
         })
-        .catch(function(e) {
+        .catch(function() {
           statusEl.className = 'status error';
           statusEl.textContent = 'Could not reach the pairing server. Check your internet and try again.';
           sendBtn.disabled = false;
